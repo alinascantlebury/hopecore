@@ -1,0 +1,83 @@
+/* Global layout */
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: "Georgia", serif;
+  color: white;
+  text-align: center;
+}
+
+/* Background video */
+#myVideo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* Centered text overlay */
+.content {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 2rem;
+  margin: auto;
+}
+
+/* Main text (clickable) */
+#recommendation {
+  font-size: 1.5rem;
+  cursor: pointer;
+  line-height: 1.6;
+  color: #daf107;
+  text-shadow:
+    -1px -1px 0 #000,  /* top-left */
+     1px -1px 0 #000,  /* top-right */
+    -1px  1px 0 #000,  /* bottom-left */
+     1px  1px 0 #000;  /* bottom-right */
+  transition: opacity 0.3s ease;
+}
+
+
+#recommendation:hover {
+  opacity: 0.8;
+}
+
+/* Back link */
+.backlink {
+  display: block;
+  margin-top: 1.5rem;
+  color: #daf107;
+  text-decoration: none;
+  font-size: 1.2rem;
+  text-shadow:
+  -1px -1px 0 #000,  /* top-left */
+   1px -1px 0 #000,  /* top-right */
+  -1px  1px 0 #000,  /* bottom-left */
+   1px  1px 0 #000;  /* bottom-right */
+}
+
+.backlink:hover {
+  color: #e6fff5;
+}
+
+/* Mobile responsiveness */
+@media only screen and (max-width: 599px) {
+  #recommendation {
+    font-size: 3rem;
+    padding: 1rem;
+  }
+}
+
+/* Desktop */
+@media only screen and (min-width: 600px) {
+  body {
+    width: 60%;
+    margin: auto;
+  }
+}

@@ -1,0 +1,72 @@
+/* Global layout */
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: "Georgia", serif;
+  color: white;
+  text-align: center;
+}
+
+/* Background video */
+#myVideo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* Centered text overlay */
+.content {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 2rem;
+  border-radius: 1rem;
+  max-width: 90%;
+  margin: auto;
+}
+
+/* Main text (clickable) */
+#recommendation {
+  font-size: 1.5rem;
+  cursor: pointer;
+  line-height: 1.6;
+  transition: opacity 0.3s ease;
+}
+
+#recommendation:hover {
+  opacity: 0.8;
+}
+
+/* Back link */
+.backlink {
+  display: block;
+  margin-top: 1.5rem;
+  color: #b5ffda;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.backlink:hover {
+  color: #e6fff5;
+}
+
+/* Mobile responsiveness */
+@media only screen and (max-width: 599px) {
+  #recommendation {
+    font-size: 1.2rem;
+    padding: 1rem;
+  }
+}
+
+/* Desktop */
+@media only screen and (min-width: 600px) {
+  body {
+    margin: auto;
+  }
+}

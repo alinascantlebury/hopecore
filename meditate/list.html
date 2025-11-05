@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>how to appreciate life</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="wet-grass">
+  <video autoplay muted loop playsinline id="myVideo">
+    <source src="/images/wet-grass.mp4"/>
+    Your browser does not support the video tag.
+  </video>
+
+  <div class="content">
+    <p id="recommendation">Meditate in your own way</p>
+    <a href="../index.html" class="backlink">← back</a>
+  </div>
+
+  <script>
+    const ideas = [
+      "Look up at the sky without blinking.",
+      "Greet strangers.",
+      "Learn how to dance like butterflies.",
+      "Plant roses among apple trees.",
+      "Plant an apple tree.",
+      "Put grass between your toes.",
+      "Make a flower arrangement with wildflowers.",
+      "Avoid stepping on dog poop.",
+      "Accept that we are all flawed.",
+      "Admit you are sad.",
+      "Be nice to people who work and clean the streets.",
+      "Be positive although you are confused.",
+      "Be comfortable with impermanence.",
+      "Clip toenails on grass.",
+      "Read, read, read.",
+
+      "Light a candle in a dark room and watch the flame. Let the light fill your eyes until all you see is its glow. Breathe.",
+      "Write a love letter to someone you care for. Let whatever you feel flow from you without editing. Send it without reading it over.",
+      "Open your windows and listen to the world surrounding you. Close your eyes and feel all the sounds it makes.",
+      "Ritualize your routines. Commit to every action you take with full attention.",
+      "Hold your hand to your heart and with every beat say, 'I am alive, I am alive, I am alive.'",
+      "Find a patch of grass near you and lay in it. Let it touch your skin. Take off your shoes and root back to the earth. Watch the sky change.",
+      "Let yourself feel every sensation as it touches you. Know you are touching it too.",
+      "Sit with your pain. Dance with your joy."
+    ];
+
+    const text = document.getElementById("recommendation");
+
+    text.addEventListener("click", () => {
+      const randomIdea = ideas[Math.floor(Math.random() * ideas.length)];
+      text.textContent = randomIdea;
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>true form reveal</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <!-- full-screen video background -->
+  <video id="video-bg" autoplay muted loop playsinline>
+    <source src="../images/wet-flower.mp4" >
+  </video>
+
+  <!-- text container -->
+  <div id="text"></div>
+
+  <script>
+    // message text
+    const message = "Hey Listen... Two people were asking me about you, I gave them your address and tel no. They will be visiting soon. Their names are Joy and Happiness.";
+
+    const textContainer = document.getElementById("text");
+    const words = message.split(" ");
+
+    // create spans for each word
+    words.forEach(word => {
+      const span = document.createElement("span");
+      span.textContent = word + " ";
+      span.classList.add("word");
+      textContainer.appendChild(span);
+    });
+
+    const wordSpans = document.querySelectorAll(".word");
+
+    // scroll-based reveal logic
+    window.addEventListener("scroll", () => {
+      const scrollTop = window.scrollY;
+      const maxScroll = document.body.scrollHeight - window.innerHeight;
+      const scrollPercent = maxScroll > 0 ? scrollTop / maxScroll : 0;
+
+      const totalWords = words.length;
+      const wordsToShow = Math.floor(scrollPercent * totalWords);
+
+      wordSpans.forEach((span, index) => {
+        span.style.opacity = index < wordsToShow ? 1 : 0;
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+/* ===== Global layout ===== */
+body {
+  font-family: "Times New Roman", serif;
+  font-size: 36px;
+  color: white;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  text-shadow: 2px 2px 2px #000000;
+  background-color: black;
+}
+
+/* ===== Video background ===== */
+#video-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 120%;
+  height: 120%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* ===== Poem layout ===== */
+#poem {
+  position: relative;
+  width: 800px;
+  margin: auto;
+  padding-top: 200px;
+  line-height: 1.6;
+  color: yellow;
+  text-shadow:
+  -1px -1px 0 #000,  /* top-left */
+   1px -1px 0 #000,  /* top-right */
+  -1px  1px 0 #000,  /* bottom-left */
+   1px  1px 0 #000;  /* bottom-right */
+}
+
+/* ===== Links ===== */
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Mobile responsiveness ===== */
+@media only screen and (max-device-width: 800px),
+       only screen and (max-width: 800px) {
+  body {
+    font-size: 200px;
+  }
+
+  #poem {
+    width: 90%;
+    padding-top: 100px;
+  }
+
+}

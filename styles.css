@@ -1,4 +1,60 @@
-body{
-	margin: auto;
-	width: 60%;
-}
+/* Make body and video fill the screen */
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: serif;
+    color: white;
+  }
+  
+  /* Fullscreen background video */
+
+  
+  /* Overlay content */
+  .content {
+    position: relative;
+    padding: 1.5rem;
+    max-width: 700px;
+    margin: auto;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 1rem;
+    line-height: 1.6;
+  }
+  
+  /* Links */
+  a {
+    color: #b5ffda;
+    text-decoration: underline;
+  }
+  
+  a:hover {
+    color: #e6fff5;
+  }
+  
+  /* Desktop layout */
+  @media only screen and (min-width: 600px) {
+    body {
+      width: 60%;
+      margin: auto;
+    }
+  }
+  
+  /* Mobile layout (iPhones and small devices) */
+  @media only screen and (max-width: 599px) {
+    .content {
+      padding: 1rem;
+      font-size: 1rem;
+      background: rgba(0, 0, 0, 0.55);
+    }
+  
+    p {
+      font-size: 1rem;
+    }
+  
+    a {
+      display: block;
+      margin-top: 1rem;
+    }
+  }
+  

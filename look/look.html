@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>look around</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <!-- Letterboxed horizontal video -->
+  <div class="video-wrapper">
+    <video id="eyeVideo" autoplay muted playsinline>
+      <source src="../images/eyes.mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <!-- captions that change over time -->
+    <div id="caption">look around!</div>
+  </div>
+
+  <script>
+    const video = document.getElementById("eyeVideo");
+    const caption = document.getElementById("caption");
+
+    const captions = [
+      { time: 0, text: "look around!" },
+      { time: 5, text: "no really!" },
+      { time: 26, text: "look around more" }
+    ];
+
+    video.addEventListener("timeupdate", () => {
+      const currentTime = video.currentTime;
+      let currentCaption = captions[0].text;
+
+      for (let i = 0; i < captions.length; i++) {
+        if (currentTime >= captions[i].time) {
+          currentCaption = captions[i].text;
+        }
+      }
+      caption.textContent = currentCaption;
+    });
+  </script>
+</body>
+</html>
