@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sound and Video</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <main>
+    <!-- VIDEO SECTION -->
+    <section class="video-section">
+      <video id="video1" autoplay muted loop playsinline>
+        <source src="../images/ocean.MP4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
+      <!-- Custom play/pause button BELOW video -->
+      <div class="controls">
+        <button
+          class="media-btn"
+          id="video1-btn"
+          aria-label="play video"
+          aria-pressed="false"
+          data-target="video1"
+          data-type="video"
+        >
+          <img src="../images/free.jpg" alt="play" />
+        </button>
+        <span class="hint">click the image to play/pause the video</span>
+      </div>
+    </section>
+
+    <!-- AUDIO SECTION -->
+    <section class="audio-section">
+      <audio id="audio1" src="../images/Milk.mp3" loop></audio>
+
+      <div class="controls">
+        <button
+          class="media-btn"
+          id="audio1-btn"
+          aria-label="play audio"
+          aria-pressed="false"
+          data-target="audio1"
+          data-type="audio"
+        >
+          <img src="../images/free.jpg" alt="play" />
+        </button>
+        <span class="hint">click the image to play/pause the sound</span>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const PLAY_ICON = "../images/lock.jpg";
+    const PAUSE_ICON = "../images/free.jpg";
+
+    function wireButton(btn) {
+      const media = document.getElementById(btn.dataset.target);
+      if (!media) return;
+
+      btn.addEventListener("click", () => {
+        if (media.paused || media.ended) {
+          media.play();
+        } else {
+          media.pause();
+        }
+      });
+
+      const setState = (playing) => {
+        btn.setAttribute("aria-pressed", playing ? "true" : "false");
+        const img = btn.querySelector("img");
+        if (img) img.src = playing ? PAUSE_ICON : PLAY_ICON;
+        img.alt = playing ? "pause" : "play";
+      };
+
+      media.addEventListener("play", () => setState(true));
+      media.addEventListener("pause", () => setState(false));
+      media.addEventListener("ended", () => {
+        media.currentTime = 0;
+        setState(false);
+      });
+
+      setState(!media.paused && !media.ended);
+    }
+
+    wireButton(document.getElementById("video1-btn"));
+    wireButton(document.getElementById("audio1-btn"));
+  </script>
+</body>
+</html>

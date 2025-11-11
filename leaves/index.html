@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vine and Videos</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* --- Title styling --- */
+    .title-container {
+      position: fixed;
+      top: 5%;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      color: rgb(255, 225, 0);
+      font-family: "Georgia", serif;
+      z-index: 100;
+    }
+
+    .title-container h1 {
+      font-size: 2rem;
+      margin: 0;
+      font-weight: normal;
+      letter-spacing: 1px;
+    }
+
+    .subtitle {
+      opacity: 0;
+      transition: opacity 2s ease;
+      position: fixed;
+      top: 15%;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 1.3rem;
+      font-style: italic;
+      color: rgb(255, 225, 0);
+    }
+
+    .subtitle.visible {
+      opacity: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Title -->
+  <div >
+    <h1 class="title-container" >pick a leaf</h1>
+    <div class="subtitle" id="subtitle">don’t choose wisely.</div>
+  </div>
+
+  <main>
+    <div id="video-gallery" class="video-gallery"></div>
+  </main>
+
+  <!-- Fixed vine at the bottom -->
+  <div class="vine-wrapper">
+    <img src="../images/v.png" alt="vine" class="vine-img" />
+
+    <!-- 17 leaf click zones -->
+    <div class="leaf" id="leaf1" data-video="../images/ocean.MP4"></div>
+    <div class="leaf" id="leaf2" data-video="../images/ocean.MP4"></div>
+    <div class="leaf" id="leaf3" data-video="../videos/three.mp4"></div>
+    <div class="leaf" id="leaf4" data-video="../videos/four.mp4"></div>
+    <div class="leaf" id="leaf5" data-video="../images/ocean.MP4"></div>
+    <div class="leaf" id="leaf6" data-video="../videos/six.mp4"></div>
+    <div class="leaf" id="leaf7" data-video="../videos/seven.mp4"></div>
+    <div class="leaf" id="leaf8" data-video="../videos/eight.mp4"></div>
+    <div class="leaf" id="leaf9" data-video="../videos/nine.mp4"></div>
+    <div class="leaf" id="leaf10" data-video="../videos/ten.mp4"></div>
+    <div class="leaf" id="leaf11" data-video="../videos/eleven.mp4"></div>
+    <div class="leaf" id="leaf12" data-video="../videos/twelve.mp4"></div>
+    <div class="leaf" id="leaf13" data-video="../videos/thirteen.mp4"></div>
+    <div class="leaf" id="leaf14" data-video="../videos/fourteen.mp4"></div>
+    <div class="leaf" id="leaf15" data-video="../videos/three.mp4"></div>
+    <div class="leaf" id="leaf16" data-video="../videos/three.mp4"></div>
+    <div class="leaf" id="leaf17" data-video="../videos/six.mp4"></div>
+  </div>
+
+  <script>
+    // Handle leaf clicks
+    const leaves = document.querySelectorAll('.leaf');
+    leaves.forEach(leaf => {
+      leaf.addEventListener('click', () => {
+        const videoSrc = leaf.getAttribute('data-video');
+        window.location.href = `vid.html?video=${encodeURIComponent(videoSrc)}`;
+      });
+    });
+
+    // Subtitle delay
+    window.addEventListener('DOMContentLoaded', () => {
+      setTimeout(() => {
+        document.getElementById('subtitle').classList.add('visible');
+      }, 500);
+    });
+  </script>
+</body>
+</html>

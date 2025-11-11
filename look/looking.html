@@ -11,12 +11,12 @@
 <body>
   <!-- Letterboxed horizontal video -->
   <div class="video-wrapper">
-    <video id="eyeVideo" autoplay muted playsinline>
-      <source src="../images/eyes.mp4" type="video/mp4">
+    <video autoplay muted playsinline>
+      <source src="/images/eyes.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
 
-    <!-- captions that change over time -->
+    <!-- captions that change over time STL FILE-->
     <div id="caption">look around!</div>
   </div>
 
@@ -33,7 +33,7 @@
     video.addEventListener("timeupdate", () => {
       const currentTime = video.currentTime;
       let currentCaption = captions[0].text;
-
+a
       for (let i = 0; i < captions.length; i++) {
         if (currentTime >= captions[i].time) {
           currentCaption = captions[i].text;

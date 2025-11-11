@@ -6,6 +6,7 @@ body, html {
     overflow: hidden;
     font-family: serif;
     color: white;
+    background-image: source;
   }
   
   /* Fullscreen background video */
