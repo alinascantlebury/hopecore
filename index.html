@@ -1,23 +1,33 @@
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./list/styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>digital resting point</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-    <p> congratulations, you have reached a digital resting point! </p>
-        <a href="./meditate/list.html"> page 1: how to appreciate life! </a>
-        <br>
-        <a href="./doom/doomed.html"> page 2: we are doomed?! </a>
-        <br>
-        <a href="./look/looking.html"> page 3: welcome to you! </a>
-        <br>
-        <a href="./class/stream.html"> page 4: will you listen? </a>
-        <br>
-        <a href="./leaves/index.html"> page 5: where have you been?</a>
-</body>
+  <div class="welcome-message">
+    congratulations, you have reached a digital resting point!
+  </div>
+  <!-- background elements -->
+  <div id="fog"></div>
+  <div id="fireflies-container"></div>
 
+  <!-- spacer to allow scroll -->
+  <div style="height:250vh;"></div>
+
+  <!-- ORB LINKS (static, fixed positions) -->
+  <a href="./meditate/list.html" class="orb orb1"></a>
+  <a href="./doom/doomed.html" class="orb orb2"></a>
+  <a href="./look/looking.html" class="orb orb3"></a>
+  <a href="./class/stream.html" class="orb orb4"></a>
+  <a href="./leaves/index.html" class="orb orb5"></a>
+
+  <div class="top-ombre"></div>
+  <div class="bottom-ombre"></div>
+
+  <script src="script.js"></script>
+</body>
 </html>
