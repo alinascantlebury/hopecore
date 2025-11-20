@@ -1,84 +1,80 @@
-html, body {
+/* Global layout */
+body, html {
   margin: 0;
   padding: 0;
-  background: black;
+  min-height: 100%;
+  font-family: "Georgia", serif;
   color: white;
-  font-family: serif;
-  overflow-x: hidden;
-  overscroll-behavior: none;
-  height: 300vh; /* allow full screen scrolling */
+  text-align: center;
+
 }
-/* Welcome message - firefly flicker */
-.welcome-message {
+
+.welcome-image {
   position: fixed;
-  top: 30px;
+  top: 55%;
+  left: 95%;
+  transform: translate(-50%, -50%);
+  width: 100vw;       
+  max-width: 450px;  /* desktop limit */
+  z-index: 15;
+  pointer-events: none;
+}
+
+.welcome-image img {
   width: 100%;
-  text-align: center;
-  font-size: 1.3rem;
-  font-family: serif;
-  color: #e6ffe1;
-
-  opacity: 0.7;
-  letter-spacing: 0.5px;
-
-  pointer-events: none; /* does not block clicks */
-  z-index: 10;
-
-  animation: fireflyFlash 6s infinite;
+  height: auto;
+  opacity: 0.88;
+  animation: gentleFloat 6s ease-in-out infinite;
 }
 
-/* Irregular flicker — firefly glow */
-@keyframes fireflyFlash {
-  0%, 100% { opacity: 0.1; text-shadow: 0 0 2px rgba(200,255,200,0.2); }
-  10%      { opacity: 1;   text-shadow: 0 0 8px rgba(200,255,200,0.8); }
-  18%      { opacity: 0.3; text-shadow: 0 0 3px rgba(200,255,200,0.3); }
-  27%      { opacity: 1;   text-shadow: 0 0 10px rgba(200,255,200,0.7); }
-  38%      { opacity: 0.2; text-shadow: 0 0 4px rgba(200,255,200,0.2); }
-  55%      { opacity: 0.9; text-shadow: 0 0 12px rgba(200,255,200,0.9); }
-  68%      { opacity: 0.4; text-shadow: 0 0 4px rgba(200,255,200,0.4); }
-  78%      { opacity: 1;   text-shadow: 0 0 15px rgba(200,255,200,1); }
-  92%      { opacity: 0.3; text-shadow: 0 0 3px rgba(200,255,200,0.3); }
-}
-/* 🔮 Static Link-Orbs */
-.orb {
-  position: fixed;       /* stays in same spot, does NOT scroll */
-  padding: 2rem 3rem;
-  border-radius: 50%;
-  text-decoration: none;
-  text-align: center;
-  font-size: 1.2rem;
-  color: white;
-  transform: scale(0);   /* start fully small */
-  transition: transform 0.3s ease-out;
-  opacity: 0.9;
-  pointer-events: auto;
-  cursor: pointer;
-
-  background: radial-gradient(circle,
-      rgba(240,255,230,0.9) 0%,
-      rgba(240,255,230,0.15) 60%,
-      rgba(240,255,230,0) 100%);
-  
-  box-shadow:
-    0 0 18px rgba(240,255,230,0.7),
-    0 0 40px rgba(240,255,230,0.5),
-    0 0 80px rgba(240,255,230,0.3);
+/* Floating / glowing effect */
+@keyframes gentleFloat {
+  0%   { transform: translate(-50%, -50%) scale(1); opacity: 0.85; }
+  50%  { transform: translate(-50%, -52%) scale(1.02); opacity: 1; }
+  100% { transform: translate(-50%, -50%) scale(1); opacity: 0.85; }
 }
 
-.orb1 { top: 20%; left: 15%; }
-.orb2 { top: 40%; left: 70%; }
-.orb3 { top: 60%; left: 30%; }
-.orb4 { top: 75%; left: 60%; }
-.orb5 { top: 85%; left: 40%; }
-
-.top-ombre,.bottom-ombre{
-  position:fixed;
-  width:100%;height:120px;
-  pointer-events:none;
+/* Mobile optimizations */
+@media only screen and (max-width: 600px) {
+  .welcome-image {
+    width: 85vw;
+    max-width: 350px;
+  }
 }
-.top-ombre{top:0;background:linear-gradient(to bottom,#000,transparent);}
-.bottom-ombre{bottom:0;background:linear-gradient(to top,#000,transparent);}
 
+/* Desktop glow effect */
+@media only screen and (min-width: 1000px) {
+  .welcome-image img {
+    filter: drop-shadow(0 0 10px rgba(255, 230, 230, 0.4));
+  }
+}
+
+/* Background video */
+#myVideo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Fog overlay */
+#fog{
+  position:fixed;top:0;left:0;width:150%;height:150vh;
+  background:url('https://i.ibb.co/02gs7Sh/fog-texture.png') repeat;
+  opacity:0.07;filter:blur(8px);
+  animation:fog-move 40s linear infinite;
+  z-index:0;
+}
+@keyframes fog-move{
+  from{transform:translate(0,0);}
+  to{transform:translate(-240px,-120px);}
+}
+
+/* Fireflies */
 #fireflies-container{
   position:fixed;top:0;left:0;width:100%;height:100vh;
   pointer-events:none;z-index:1;overflow:hidden;
@@ -105,14 +101,39 @@ html, body {
   90%{opacity:0.5;}
 }
 
-#fog{
-  position:fixed;top:0;left:0;width:150%;height:150vh;
-  background:url('https://i.ibb.co/02gs7Sh/fog-texture.png') repeat;
-  opacity:0.07;filter:blur(8px);
-  animation:fog-move 40s linear infinite;
-  z-index:0;
+/* Orb links (floating access points) */
+.orb {
+  position: fixed;
+  padding: 2rem 3rem;
+  border-radius: 50%;
+  text-decoration: none;
+  text-align: center;
+  font-size: 1.2rem;
+  color: white;
+  transform: scale(0);
+  transition: transform 0.3s ease-out;
+  opacity: 0.9;
+  pointer-events: auto;
+  cursor: pointer;
+  background: radial-gradient(circle,
+      rgba(240,255,230,0.9) 0%,
+      rgba(240,255,230,0.15) 60%,
+      rgba(240,255,230,0) 100%);
+  box-shadow:
+    0 0 18px rgba(240,255,230,0.7),
+    0 0 40px rgba(240,255,230,0.5),
+    0 0 80px rgba(240,255,230,0.3);
 }
-@keyframes fog-move{
-  from{transform:translate(0,0);}
-  to{transform:translate(-240px,-120px);}
+
+.orb1 { top: 20%; left: 15%; }
+.orb2 { top: 40%; left: 70%; }
+.orb3 { top: 60%; left: 30%; }
+.orb4 { top: 75%; left: 60%; }
+.orb5 { top: 85%; left: 40%; }
+
+.top-ombre,.bottom-ombre{
+  position:fixed;
+  width:100%;height:120px;
+  pointer-events:none;
 }
+

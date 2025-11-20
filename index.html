@@ -8,25 +8,27 @@
 </head>
 
 <body>
-  <div class="welcome-message">
-    congratulations, you have reached a digital resting point!
+  <div class="welcome-image">
+    <img src="../images/congrats.png" alt="digital resting point" />
   </div>
-  <!-- background elements -->
+
+  <video autoplay muted loop playsinline id="myVideo">
+    <source src="../videos/nine.MP4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
   <div id="fog"></div>
   <div id="fireflies-container"></div>
 
-  <!-- spacer to allow scroll -->
   <div style="height:250vh;"></div>
 
-  <!-- ORB LINKS (static, fixed positions) -->
   <a href="./meditate/list.html" class="orb orb1"></a>
   <a href="./doom/doomed.html" class="orb orb2"></a>
   <a href="./look/looking.html" class="orb orb3"></a>
   <a href="./class/stream.html" class="orb orb4"></a>
   <a href="./leaves/index.html" class="orb orb5"></a>
 
-  <div class="top-ombre"></div>
-  <div class="bottom-ombre"></div>
+
 
   <script src="script.js"></script>
 </body>
