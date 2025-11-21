@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
   <title>digital resting point</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -12,7 +12,15 @@
     <img src="./images/congrats.png" alt="digital resting point" />
   </div>
 
-  <video autoplay muted loop playsinline id="myVideo">
+  <video
+    id="myVideo"
+    autoplay
+    muted
+    playsinline
+    webkit-playsinline
+    loop
+    preload="auto"
+  >
     <source src="./videos/nine.MP4" type="video/mp4" />
     Your browser does not support the video tag.
   </video>
@@ -31,8 +39,19 @@
   <a href="./leaves/index.html" class="orb orb7"></a>
   <a href="./leaves/index.html" class="orb orb8"></a>
 
+  <!-- Autoplay fallback script for iOS Safari -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const video = document.getElementById("myVideo");
+      const tryPlay = () => {
+        video.play().catch(() => {
+          document.body.addEventListener("touchstart", () => video.play(), { once: true });
+        });
+      };
+      tryPlay();
+    });
+  </script>
 
-  
   <script src="script.js"></script>
 </body>
 </html>
