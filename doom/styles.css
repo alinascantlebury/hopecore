@@ -1,13 +1,21 @@
+@font-face {
+  font-family: "MyFont";
+  src: url("./fonts/myFont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 /* ===== Global layout ===== */
 body {
-  font-family: "Times New Roman", serif;
+  font-family: "MyFont";
   font-size: 36px;
   color: white;
   text-align: center;
+  background: url('../images/three.png') center/cover no-repeat fixed;
   margin: 0;
   padding: 0;
   text-shadow: 2px 2px 2px #000000;
-  background-color: black;
 }
 
 /* ===== Video background ===== */

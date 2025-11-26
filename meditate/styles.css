@@ -1,15 +1,19 @@
-/* Global layout */
+@font-face {
+  font-family: "MyFont";
+  src: url("./fonts/myFont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 body, html {
   height: 100%;
   margin: 0;
   padding: 0;
   overflow: hidden;
-  font-family: "Georgia", serif;
-  color: white;
+  font-family: "MyFont";  color: white;
   text-align: center;
 }
 
-/* Background video */
 #myVideo {
   position: fixed;
   top: 0;
@@ -18,10 +22,9 @@ body, html {
   min-height: 100%;
   object-fit: cover;
   z-index: -1;
-  pointer-events: none; /* optional: prevents play button on tap */
+  pointer-events: none; 
 }
 
-/* Centered text overlay */
 .content {
   position: relative;
   top: 50%;
@@ -30,7 +33,6 @@ body, html {
   margin: auto;
 }
 
-/* Main text (clickable) */
 #recommendation {
   font-size: 1.5rem;
   cursor: pointer;
@@ -56,18 +58,13 @@ body, html {
   color: #daf107;
   text-decoration: none;
   font-size: 1.2rem;
-  text-shadow:
-  -1px -1px 0 #000,  /* top-left */
-   1px -1px 0 #000,  /* top-right */
-  -1px  1px 0 #000,  /* bottom-left */
-   1px  1px 0 #000;  /* bottom-right */
+
 }
 
 .backlink:hover {
   color: #e6fff5;
 }
 
-/* Mobile responsiveness */
 @media only screen and (max-width: 599px) {
   #recommendation {
     font-size: 3rem;
@@ -75,7 +72,6 @@ body, html {
   }
 }
 
-/* Desktop */
 @media only screen and (min-width: 600px) {
   body {
     width: 60%;

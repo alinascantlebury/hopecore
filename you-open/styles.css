@@ -1,0 +1,104 @@
+@font-face {
+    font-family: "MyFont";
+    src: url("./fonts/myFont.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body, html {
+    width: 100%;
+    height: 100vh;
+    font-family: "MyFont", sans-serif;
+    background-color: #000;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+
+  .knock-text {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 3rem;
+    color: #d4af37;
+    text-align: center;
+    line-height: 1.3;
+    pointer-events: none;
+    z-index: 10;
+  }
+  
+
+  .door-container {
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  
+  
+
+  
+  .arrow {
+    font-size: 2.5rem;
+    color: #d4af37;
+    transform: scaleX(-1);
+  }
+
+  
+  /* Responsive adjustments */
+  @media only screen and (max-width: 768px) {
+    .knock-text {
+      font-size: 2rem;
+      top: 10%;
+    }
+  
+    .door-container img {
+      max-width: 450px;
+      max-height: 75vh;
+      width: auto;
+      height: auto;
+      display: block;
+    }
+  
+
+    .arrow {
+      font-size: 1.8rem;
+    }
+
+  }
+  
+  @media only screen and (max-width: 480px) {
+    .knock-text {
+      font-size: 1.5rem;
+    }
+  
+    .door-container img {
+      width: 100vw; 
+    }
+  
+
+    .arrow {
+      font-size: 1.4rem;
+    }
+  
+
+  }
+  

@@ -1,72 +1,130 @@
-/* Global layout */
-body, html {
-  height: 100%;
+@font-face {
+  font-family: "MyFont";
+  src: url("./fonts/myFont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  width: 100%;
+  height: 100vh;
+  font-family: "MyFont", sans-serif;
+  background-color: #000;
   overflow: hidden;
-  font-family: "Georgia", serif;
-  color: white;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Background video */
-#myVideo {
-  position: fixed;
-  top: 0;
-  left: 0;
-  min-width: 100%;
-  min-height: 100%;
-  object-fit: cover;
-  z-index: -1;
-}
-
-/* Centered text overlay */
-.content {
+.container {
   position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-  padding: 2rem;
-  border-radius: 1rem;
-  max-width: 90%;
-  margin: auto;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Main text (clickable) */
-#recommendation {
-  font-size: 1.5rem;
+.knock-text {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 3rem;
+  color: #d4af37;
+  text-align: center;
+  line-height: 1.3;
+  pointer-events: none;
+  z-index: 10;
+}
+
+
+.door-container {
+  position: relative;
   cursor: pointer;
-  line-height: 1.6;
-  transition: opacity 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
-#recommendation:hover {
-  opacity: 0.8;
-}
 
-/* Back link */
-.backlink {
+
+.door-container img {
+  width: 80vw; 
+  width: auto;
+  height: auto;
   display: block;
-  margin-top: 1.5rem;
-  color: #b5ffda;
-  text-decoration: none;
-  font-size: 0.9rem;
 }
 
-.backlink:hover {
-  color: #e6fff5;
+.answer-label {
+  position: static;
+  top: 95%;
+  right: 50px; 
+  pointer-events: none;
 }
 
-/* Mobile responsiveness */
-@media only screen and (max-width: 599px) {
-  #recommendation {
-    font-size: 1.2rem;
-    padding: 1rem;
+.arrow {
+  font-size: 2.5rem;
+  color: #d4af37;
+  transform: scaleX(-1);
+}
+
+.answer-text {
+  font-size: 2.5rem;
+  color: #d4af37;
+  white-space: nowrap;
+}
+
+
+
+@media only screen and (max-width: 768px) {
+  .knock-text {
+    font-size: 2rem;
+    top: 10%;
+  }
+
+  .door-container img {
+    max-width: 450px;
+    max-height: 75vh;
+    width: auto;
+    height: auto;
+  }
+
+  .answer-label {
+    right: -130px;
+  }
+
+  .arrow {
+    font-size: 1.8rem;
+  }
+
+  .answer-text {
+    font-size: 1.8rem;
   }
 }
 
-/* Desktop */
-@media only screen and (min-width: 600px) {
-  body {
-    margin: auto;
+@media only screen and (max-width: 480px) {
+  .knock-text {
+    font-size: 1.5rem;
+  }
+
+  .door-container img {
+    width: 100vw; 
+  }
+
+  .answer-label {
+    right: -100px;
+  }
+
+  .arrow {
+    font-size: 1.4rem;
+  }
+
+  .answer-text {
+    font-size: 1.4rem;
   }
 }

@@ -1,4 +1,3 @@
-/* Background video */
 body{
     background-color: black;
 }
@@ -9,7 +8,7 @@ body{
     min-width: 100%;
     min-height: 100%;
     object-fit: cover;
-    object-position: -40% center;/* 👈 Shift focus to left */
+    object-position: -40% center;
     z-index: -1;
     pointer-events: none;
   }

@@ -1,0 +1,136 @@
+@font-face {
+  font-family: "MyFont";
+  src: url("./fonts/myFont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: white;
+  font-family: "MyFont", "Georgia", system-ui, -apple-system, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  padding: 2rem;
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+video {
+  max-width: 85vw;
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  display: block;
+}
+
+@media (max-width: 600px) {
+  video {
+    max-width: 100vw;
+    max-height: 100vh;
+    border-radius: 0;
+  }
+}
+
+.video-section,
+.audio-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.media-btn {
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  display: inline-grid;
+  place-items: center;
+  transition: transform 0.2s ease;
+}
+
+.media-btn:hover {
+  transform: scale(1.05);
+}
+
+.media-btn img {
+  width: 80px;
+  height: 80px;
+  display: block;
+}
+
+.media-btn:focus-visible {
+  outline: 3px solid #5a8dff;
+  outline-offset: 4px;
+  border-radius: 12px;
+}
+
+.hint {
+  font-size: 0.875rem;
+  opacity: 0.7;
+  margin-top: 0.5rem;
+  text-align: center;
+  color: #000;
+}
+
+.back-btn {
+  position: absolute;
+  top: 20px;
+ 	left: 20px;
+ 	background: transparent;
+ 	color: rgb(255, 255, 255);
+ 	border: 1px solid #fff;
+ 	border-radius: 10px;
+ 	padding: 0.5rem 1rem;
+ 	cursor: pointer;
+ 	font-family: "MyFont", "Georgia", serif;
+ 	transition: background 0.3s ease;
+ 	z-index: 10;
+}
+
+.back-btn:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+.error-message {
+  color: #ff6b6b;
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 2rem;
+}
