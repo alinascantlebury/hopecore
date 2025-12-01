@@ -67,3 +67,22 @@ a:hover {
   }
 
 }
+.floater {
+  position: fixed;
+  top: 20%;
+  left: 10%;
+  transform: translate(-10%, -20%);
+  z-index: 1;
+}
+
+.floater a {
+  font-size: 30pt;
+  color: #d3d3d3;
+  text-decoration: none;
+  font-family: "MyFont";
+  letter-spacing: 1px;
+}
+
+.floater a:hover {
+  text-decoration: underline;
+}
