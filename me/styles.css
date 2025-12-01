@@ -1,15 +1,70 @@
-body{
+@font-face {
+    font-family: "MyFont";
+    src: url("./fonts/myFont.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
     background-color: black;
-}
-#myVideo {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  #myVideo {
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     position: fixed;
     top: 0;
     left: 0;
-    min-width: 100%;
-    min-height: 100%;
-    object-fit: cover;
-    object-position: -40% center;
-    z-index: -1;
     pointer-events: none;
+    z-index: -1;
+  }
+  
+  h1 {
+    font-size: 42pt;
+    color: yellow;
+    font-family: "MyFont";
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    z-index: 5;
+    top: 120px;
+
+  }
+  
+  @media (max-width: 600px) {
+    h1 {
+      font-size: 26pt;
+    }
+  }
+  
+  .back-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: transparent;
+    color: white;
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-family: "MyFont";
+    transition: background 0.3s ease;
+    z-index: 10;
+  }
+  
+  .back-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
   }
   
