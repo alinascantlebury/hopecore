@@ -101,4 +101,30 @@
   
 
   }
+
+
+  
+  .overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 75%;
+    transform: translate(-50%, -50%);
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #dcdcdc;
+    text-align: left;
+    font-family: "MyFont";
+    white-space: pre-line;
+    pointer-events: none;
+
+  }
+  
+  /* Mobile adjustments */
+  @media (max-width: 600px) {
+    .overlay-text {
+      font-size: 0.85rem;
+      width: 80%;
+    }
+  }
   

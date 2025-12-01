@@ -45,7 +45,7 @@ body, html {
     line-height: 1.4;
   }
   
-  h1 { font-size: 42pt; margin-bottom: 20px; }
+  h1 { font-size: 42pt; margin-bottom: 20px; font-family: "MyFont";}
   h2 { font-size: 22pt; margin: 8px 0; }
   
   @media (max-width: 600px) {
