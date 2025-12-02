@@ -1,3 +1,10 @@
+@font-face {
+  font-family: "MyFont";
+  src: url("./fonts/myFont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
     box-sizing: border-box;
   }
@@ -6,7 +13,7 @@
     margin: 0;
     padding: 0;
     background-color: white;
-    font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    font-family: "MyFont";
     display: flex;
     justify-content: center;
     align-items: center;
@@ -94,7 +101,7 @@
     border-radius: 10px;
     padding: 0.5rem 1rem;
     cursor: pointer;
-    font-family: "Georgia", serif;
+    font-family: "MyFont";
     transition: background 0.3s ease;
     z-index: 10;
   }
