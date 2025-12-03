@@ -1,3 +1,10 @@
+@font-face {
+  font-family: "MyFont";
+  src: url("../fonts/myFont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 body, html {
     margin: 0;
     padding: 0;
@@ -5,7 +12,7 @@ body, html {
     height: 100%;
     background-color: black;
     overflow: hidden;
-    font-family: Georgia, serif;
+    font-family:"MyFont";
   }
   
   .image-container {
