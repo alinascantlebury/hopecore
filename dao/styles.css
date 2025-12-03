@@ -45,9 +45,10 @@
   }
   
   .congrats {
-    position: absolute;
+    position: relative;
+    margin-top: 20vh;
     width: 100%;
-    top: 25vh;
+    padding: 0 1rem;
     text-align: center;
     font-family: "MyFont";
     color: #ffd770;
@@ -62,9 +63,16 @@
   h2 { font-size: 22pt; margin: 8px 0; }
   
   @media (max-width: 600px) {
-    h1 { font-size: 26pt; }
-    h2 { font-size: 16pt; }
+    .congrats {
+      margin-top: 15vh;
+      padding: 0 1.2rem;
+    }
+  
+    h1 { 
+      font-size: 22pt; 
+    }
   }
+  
 
   .back-btn:hover {
     background: rgba(255, 255, 255, 0.1);
