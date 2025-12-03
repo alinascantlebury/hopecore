@@ -8,24 +8,18 @@
 </head>
 
 <body>
-  <!-- Welcome image -->
   <div class="welcome-image">
     <img src="../images/congrats.png" alt="digital resting point" />
   </div>
 
-  <!-- Atmospheric layers -->
   <div id="fog"></div>
   <div id="fireflies-container"></div>
   <div class="vignette"></div>
 
-  <!-- Scroll hint -->
   <div class="scroll-hint">descend</div>
 
-  <!-- Initial spacer -->
   <div class="scroll-spacer"></div>
 
-  <!-- Orb navigation area -->
-  <!-- <div class="orb-scroll-area"> -->
   
     <a href="../meditate/list.html" class="orb orb1"></a>
     <a href="../doom/doomed.html" class="orb orb2"></a>
@@ -36,10 +30,8 @@
     <a href="../leaves/index.html" class="orb orb7"></a>
     <a href="../leaves/index.html" class="orb orb8"></a>
   
-  <!-- </div>-->
 
   <script>
-    // Firefly generation with natural variation
     const container = document.getElementById("fireflies-container");
     const fireflyCount = 28;
     
@@ -47,23 +39,20 @@
       const fly = document.createElement("div");
       fly.className = "firefly";
       
-      // Random positioning
       fly.style.top = `${Math.random() * 120}vh`;
       fly.style.left = `${Math.random() * 100}vw`;
       
-      // Natural movement variations
       const driftX = (Math.random() - 0.5) * 200;
       const driftY = -80 - Math.random() * 120;
       fly.style.setProperty("--dx", `${driftX}px`);
       fly.style.setProperty("--dy", `${driftY}px`);
       
-      // Staggered animation delays
+     
       fly.style.setProperty("--delay", `${Math.random() * 4}s`);
       
       container.appendChild(fly);
     }
 
-    // Orb reveal on scroll with smooth stagger
     const orbs = document.querySelectorAll('.orb');
     const scrollHint = document.querySelector('.scroll-hint');
     
@@ -78,7 +67,6 @@
         scrollHint.style.opacity = '';
       }
       
-      // Reveal orbs progressively
       orbs.forEach((orb, index) => {
         const orbTop = orb.offsetTop + orb.offsetParent.offsetTop;
         const triggerPoint = scrollY + windowHeight * 0.75;
@@ -93,7 +81,6 @@
       });
     }
     
-    // Smooth scroll handling with throttle
     let scrollTimeout;
     window.addEventListener('scroll', () => {
       if (scrollTimeout) {
@@ -102,7 +89,6 @@
       scrollTimeout = window.requestAnimationFrame(updateOrbs);
     });
     
-    // Initial check
     updateOrbs();
   </script>
 </body>
