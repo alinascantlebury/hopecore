@@ -1,3 +1,10 @@
+@font-face {
+  font-family: "MyFont";
+  src: url("../fonts/myFont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 
   body, html {
     margin: 0;
@@ -21,7 +28,7 @@
   
   .congrats {
     position: absolute;
-    top: 50%;
+    top: 75%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 85%;
@@ -62,3 +69,22 @@
   .floater a:hover {
     text-decoration: underline;
   }
+  .back-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: transparent;
+    color: white;
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-family: "MyFont";
+    transition: background 0.3s ease;
+    z-index: 10;
+  }
+  
+  .back-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+  

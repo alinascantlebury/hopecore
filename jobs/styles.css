@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "MyFont";
+  src: url("../fonts/myFont.ttf") format("truetype");
+}
+
 body, html {
   height: 100%;
   margin: 0;
